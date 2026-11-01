@@ -1,0 +1,134 @@
+{
+  "project_name": "Reprise",
+  "tagline": "A música que faz o amor voltar a tocar",
+  "language": "pt",
+  "currency": "EUR",
+  "theme_strategy": {
+    "primary_mode": "dark",
+    "theme_description": "Luxury Romantic Nocturne - Deep rich dark velvet canvas (#0D0914) with warm golden champagne highlights (#E6A15C), subtle rose gold glow (#D9777F), and crisp warm ivory typography (#FAF7F2). Creates an intimate, emotional, studio-crafted experience."
+  },
+  "typography": {
+    "heading_font": "Playfair Display, Cormorant Garamond, serif",
+    "body_font": "Plus Jakarta Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight font-medium leading-[1.1]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-tight font-normal",
+      "h3_subsection": "text-xl sm:text-2xl font-serif tracking-normal",
+      "h4_card": "text-lg sm:text-xl font-sans font-semibold",
+      "body": "text-base font-sans leading-relaxed text-zinc-300",
+      "small_label": "text-xs font-mono uppercase tracking-[0.2em] text-amber-400/90"
+    },
+    "forbidden_fonts": ["Inter", "Space Grotesk"]
+  },
+  "colors": {
+    "background_main": "#0D0914",
+    "background_card": "rgba(23, 17, 34, 0.75)",
+    "background_card_border": "rgba(230, 161, 92, 0.15)",
+    "primary_accent": "#E6A15C",
+    "primary_accent_hover": "#F0B475",
+    "secondary_accent": "#D9777F",
+    "text_primary": "#FAF7F2",
+    "text_secondary": "#A39BB0",
+    "text_muted": "#6E657D",
+    "success": "#10B981",
+    "gold_gradient": "linear-gradient(135deg, #F0B475 0%, #E6A15C 50%, #C87E38 100%)",
+    "forbidden_colors": ["#7351B7", "#1B93A4"]
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-[#130E1F]/70 border border-amber-500/20 shadow-[0_8px_32px_rgba(0,0,0,0.4)]",
+    "tracing_beam": "glow-border animation around primary callout cards with gold blur bleed",
+    "editorial_marquee": "slow drifting ribbon with low-contrast warm text and generous horizontal gaps",
+    "audio_waveform": "interactive HTML5 Canvas audio spectrum visualizer in rose-gold and amber"
+  },
+  "layout_and_grid": {
+    "bento_grid_mode": "MODE A: TETRIS GRID for hero, occasions, and customer reaction stories",
+    "spacing_scale": "Generous spacing (p-6, p-8, p-12, p-16, py-20, py-28) to give cinematic breathing room",
+    "header": "Fixed sticky header with backdrop blur (backdrop-blur-xl bg-[#0D0914]/80 border-b border-amber-500/10 z-50). Visible nav items: Exemplos, Como Funciona, Avaliações, Ocasiões, FAQ, and primary CTA 'Criar a minha música'",
+    "footer": "Rich dark footer with massive display brand mark ('REPRISE'), link columns, guarantee badge, trust seals, and currency selector (€ EUR)"
+  },
+  "key_routes_and_flows": {
+    "landing_page": {
+      "path": "/",
+      "sections": [
+        "Sticky Glass Header with SVG logo mark + Nav links + CTA",
+        "Kinetic Hero with line-by-line reveal: Headline 'Transforme as suas memórias numa música que faz chorar de alegria', badges ('Pronto em 24h', '100% Garantia de Devolução'), audio preview modal trigger, CTA 'Criar a minha música'",
+        "Trust & Press Strip ('As seen on' style logo placeholders + Trustpilot 4.9⭐ rating)",
+        "Reaction Video / Photo Carousel with customer tearful reactions and quotes",
+        "4-Step 'Como Funciona' visual timeline (1. Conte a sua história, 2. Escrevemos a letra, 3. Produção em estúdio, 4. Entrega em 24h)",
+        "Interactive Samples Player with occasion tabs (Aniversário, Casamento, Dia da Mãe, Amor & Reconciliação, Memorial, etc.) + Genre toggle + Audio wave visualizer",
+        "12 Occasions Grid (12 curated high-quality image tiles with overlay text)",
+        "Verified Customer Reviews with Trustpilot badge and detailed testimonial cards",
+        "FAQ Accordion with top 5 questions",
+        "Final Kinetic CTA section with ambient vinyl graphic preview",
+        "Rich Footer with privacy policy, terms, support contact, and logo mark"
+      ]
+    },
+    "creation_wizard": {
+      "path": "/criar",
+      "steps_count": 8,
+      "steps": [
+        "Step 1: Para quem é a música? (Parceiro(a), Mãe, Pai, Filho(a), Melhor Amigo(a), Avó/Avô, Outro)",
+        "Step 2: Qual é o nome da pessoa homenageada?",
+        "Step 3: Qual é a ocasião especial? (Aniversário, Casamento, Reconciliação, Agradecimento, Dia da Mãe, Homenagem)",
+        "Step 4: Escolha o estilo musical (Bossa Nova, Acoustic Pop, Fado Pop, Balada Romântica, MPB, Epic Cinematic)",
+        "Step 5: Selecione a voz (Masculina / Feminina) e o tom emocional (Emocionante/Lagrimas, Alegre/Contagiante, Nostálgico, Suave)",
+        "Step 6: Conte a sua história e memórias (Textarea com inspirações: Como se conheceram? Frases marcantes? Momentos inesquecíveis?)",
+        "Step 7: Dados para contacto e envio (Seu Nome, Seu E-mail)",
+        "Step 8: Resumo da Encomenda & Escolha do Plano (€39 Normal 48h vs €59 Express 24h + extras como Faixa Instrumental + Letra Impressa PDF) -> Simulação Checkout Stripe"
+      ]
+    },
+    "private_song_page": {
+      "path": "/musica/:id",
+      "features": [
+        "Dedicated romantic song page with customized header",
+        "Custom audio player with play/pause, seekbar, current time, duration, volume, and downloadable MP3 link",
+        "Synchronized / Displayed lyrics with highlighted stanzas",
+        "Story recap box showing recipient name, occasion, and original memories",
+        "Share modal / link copy for WhatsApp & Social Media",
+        "Option to request revision or contact support"
+      ]
+    },
+    "admin_dashboard": {
+      "path": "/admin",
+      "features": [
+        "Admin Login form",
+        "Orders table with filters (All, Pending, In Production, Completed)",
+        "Order detail view showing customer memories and selected style",
+        "Audio Upload modal to attach MP3 file URL or upload audio to order ID",
+        "Status update toggle (Notificar cliente por E-mail ao concluir)"
+      ]
+    }
+  },
+  "image_urls": {
+    "hero_background": "https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxyb21hbnRpYyUyMGNvdXBsZSUyMG11c2ljJTIwZW1vdGlvbiUyMGVtYnJhY2V8ZW58MHx8fHwxNzkzNTUzMzMzfDA&ixlib=rb-4.1.0&q=85",
+    "couple_embrace_1": "https://images.unsplash.com/photo-1749224263626-398684db412b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxyb21hbnRpYyUyMGNvdXBsZSUyMG11c2ljJTIwZW1vdGlvbiUyMGVtYnJhY2V8ZW58MHx8fHwxNzkzNTUzMzMzfDA&ixlib=rb-4.1.0&q=85",
+    "couple_romantic_2": "https://images.unsplash.com/photo-1668615522927-4f9afd59445e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHw0fHxyb21hbnRpYyUyMGNvdXBsZSUyMG11c2ljJTIwZW1vdGlvbiUyMGVtYnJhY2V8ZW58MHx8fHwxNzkzNTUzMzMzfDA&ixlib=rb-4.1.0&q=85",
+    "couple_hug_3": "https://images.unsplash.com/photo-1541089255538-4ea146c8866d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHxyb21hbnRpYyUyMGNvdXBsZSUyMG11c2ljJTIwZW1vdGlvbiUyMGVtYnJhY2V8ZW58MHx8fHwxNzkzNTUzMzMzfDA&ixlib=rb-4.1.0&q=85",
+    "mother_child_hug": "https://images.unsplash.com/photo-1475609471617-0ef53b59cff5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHw0fHxtb3RoZXIlMjBjaGlsZCUyMGh1ZyUyMHdhcm0lMjBlbW90aW9ufGVufDB8fHx8MTc5MzU1MzMzN3ww&ixlib=rb-4.1.0&q=85",
+    "mother_family_warm": "https://images.unsplash.com/photo-1531984929664-2fb2be468d3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwyfHxtb3RoZXIlMjBjaGlsZCUyMGh1ZyUyMHdhcm0lMjBlbW90aW9ufGVufDB8fHx8MTc5MzU1MzMzN3ww&ixlib=rb-4.1.0&q=85",
+    "acoustic_guitar_studio": "https://images.unsplash.com/photo-1573603088895-d399fbee9653?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHx2aW55bCUyMHJlY29yZCUyMGFjb3VzdGljJTIwZ3VpdGFyJTIwbXVzaWMlMjBzdHVkaW98ZW58MHx8fHwxNzkzNTUzMzM3fDA&ixlib=rb-4.1.0&q=85",
+    "vinyl_record_spin": "https://images.unsplash.com/photo-1588532218970-c2cab983746a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHx2aW55bCUyMHJlY29yZCUyMGFjb3VzdGljJTIwZ3VpdGFyJTIwbXVzaWMlMjBzdHVkaW98ZW58MHx8fHwxNzkzNTUzMzM3fDA&ixlib=rb-4.1.0&q=85",
+    "guitars_collection": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHx2aW55bCUyMHJlY29yZCUyMGFjb3VzdGljJTIwZ3VpdGFyJTIwbXVzaWMlMjBzdHVkaW98ZW58MHx8fHwxNzkzNTUzMzM3fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "testing_and_accessibility": {
+    "data_testid_requirement": "All interactive elements, buttons, inputs, audio controls, wizard steps, and modal buttons MUST have descriptive kebab-case data-testid attributes.",
+    "examples": [
+      "data-testid=\"nav-create-song-button\"",
+      "data-testid=\"hero-listen-example-button\"",
+      "data-testid=\"wizard-step-1-chip-parceiro\"",
+      "data-testid=\"wizard-next-step-button\"",
+      "data-testid=\"audio-player-play-pause-button\"",
+      "data-testid=\"admin-order-upload-audio-button\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Follow Portuguese language for all UI copy (e.g. 'Transforme as suas memórias numa música inesquecível', 'Criar a minha música', 'Pronto em 24h').",
+    "Use EUR (€) for all pricing (€39.00 standard, €59.00 express delivery 24h).",
+    "Implement smooth scrolling with Lenis or CSS smooth behavior and line-by-line reveal animations with framer-motion.",
+    "Build custom interactive audio players with play/pause state and simulated waveform visualizations for sample listening.",
+    "Ensure all 8 steps of the creation flow /criar operate smoothly with state retention, step back/next, validation, and final order submit.",
+    "Implement full admin dashboard at /admin with simulated order status toggle, order detail view, and custom audio upload dialog.",
+    "Every key interactive element MUST have data-testid."
+  ]
+}
