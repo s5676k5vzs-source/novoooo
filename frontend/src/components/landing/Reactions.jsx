@@ -19,10 +19,10 @@ export const Reactions = () => {
       <div ref={track} data-lenis-prevent className="no-scrollbar mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 md:px-10">
         {REACTIONS.map((r, i) => (
           <motion.figure key={i} data-testid={`reaction-card-${i}`} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, delay: (i % 4) * 0.08 }}
-            className="group relative aspect-[3/4] w-[78vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-[1.75rem]">
-            <img src={r.img} alt={`Reação de ${r.name}`} loading="lazy" className="h-full w-full object-cover grayscale-[35%] transition-[transform,filter] duration-[1.2s] group-hover:scale-105 group-hover:grayscale-0" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0914] via-[#0d0914]/20 to-transparent" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,transparent_30%,rgba(13,9,20,.5))]" />
+            className="group relative aspect-[3/4] w-[78vw] max-w-[300px] shrink-0 snap-start overflow-hidden rounded-xl">
+            <img src={r.img} alt={`Reação de ${r.name}`} loading="lazy" decoding="async" className="h-full w-full object-cover grayscale-[35%] transition-[transform,filter] duration-[1.2s] group-hover:scale-105 group-hover:grayscale-0" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b] via-[#0a0a0b]/20 to-transparent" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,transparent_30%,rgba(10,10,11,.5))]" />
             <figcaption className="absolute inset-x-0 bottom-0 p-6">
               <Quote size={18} className="mb-3 text-[var(--gold)]" />
               <p className="font-display text-2xl">{r.name}</p>

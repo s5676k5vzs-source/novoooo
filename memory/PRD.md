@@ -22,6 +22,10 @@ User choices: brand name evoking music + love/rekindling love (chosen: Reprise),
 ## Implemented (2026-11-01)
 - All of the above, verified: wizard → Stripe checkout redirect, order API, admin login/list/upload, AI lyrics generation, song page desktop/mobile
 
+## Update (2026-11-01)
+- Visual refresh: Geist + Geist Mono fonts, neutral near-black + single orange accent (#ff6a3d), flat buttons, no serif/italics/gradients/grain, new "reprise.fm" logo + favicon
+- Performance: lazy-loaded routes, smaller Unsplash images (w=900 q=70) with lazy/async decoding, hero image fetchpriority high, audio preload none, removed animated grain overlay, blur glows and backdrop blur
+
 ## Backlog
 - P1: Email notification to customer when song is ready (Resend)
 - P1: Replace placeholder sample audio, testimonials, support email, legal pages

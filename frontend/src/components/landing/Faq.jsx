@@ -10,7 +10,7 @@ export const Faq = () => (
     <div className="mx-auto grid max-w-[1400px] gap-12 px-5 md:px-10 lg:grid-cols-12">
       <div className="lg:col-span-4">
         <SectionHead eyebrow="Perguntas frequentes" title={<>Tudo o que <em className="text-gold-grad">quer saber</em></>} />
-        <Reveal delay={0.1} className="mt-10 rounded-[1.5rem] border border-white/[0.07] p-6">
+        <Reveal delay={0.1} className="mt-10 rounded-xl border border-white/[0.07] p-6">
           <p className="font-display text-2xl">Ainda tem dúvidas?</p>
           <p className="mt-2 text-sm text-[var(--mute)]">A nossa equipa responde a qualquer hora.</p>
           <a href="mailto:ola@reprise.pt" data-testid="faq-support-email" className="mt-4 inline-flex items-center gap-2 text-sm text-[var(--gold)] hover:underline"><Mail size={15} />ola@reprise.pt</a>
@@ -34,9 +34,9 @@ export const Faq = () => (
 
 export const FinalCta = () => (
   <section data-testid="final-cta-section" className="relative px-5 pb-24 md:px-10 md:pb-32">
-    <div className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[2.5rem] border border-[rgba(230,161,92,.2)]">
-      <img src={IMG.dance} alt="Casal a dançar numa sala iluminada" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(13,9,20,.4),#0d0914_75%)]" />
+    <div className="relative mx-auto max-w-[1400px] overflow-hidden rounded-2xl border border-[rgba(255,106,61,.2)]">
+      <img src={IMG.dance} alt="Casal a dançar numa sala iluminada" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-40" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(10,10,11,.4),#0a0a0b_75%)]" />
       <div className="relative grid items-center gap-10 p-8 py-16 md:p-16 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <p className="eyebrow mb-6">O presente que fica</p>
@@ -48,7 +48,7 @@ export const FinalCta = () => (
         <motion.div initial={{ rotate: -30, opacity: 0 }} whileInView={{ rotate: 0, opacity: 1 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }} className="mx-auto hidden w-64 lg:col-span-4 lg:block">
           <div className="vinyl-grooves spin-slow relative aspect-square rounded-full shadow-2xl">
             <div className="absolute inset-[32%] rounded-full bg-[var(--gold)]" />
-            <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0d0914]" />
+            <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0a0a0b]" />
           </div>
         </motion.div>
       </div>

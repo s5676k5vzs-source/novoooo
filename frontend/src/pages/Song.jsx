@@ -62,7 +62,7 @@ export default function Song() {
   const paid = song.payment_status === "paid";
   return (
     <main data-testid="song-page" className="relative min-h-screen pb-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(230,161,92,.16),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(255,106,61,.16),transparent_60%)]" />
       <header className="relative mx-auto flex max-w-[1100px] items-center justify-between px-5 py-6 md:px-10">
         <Logo />
         <button data-testid="song-share-button" onClick={share} className="btn-ghost !px-4 !py-2.5 text-sm"><Share2 size={15} />Partilhar</button>
@@ -74,7 +74,7 @@ export default function Song() {
         </h1>
         <p className="mt-6 text-[var(--mute)]">Com amor, de {song.customer_name}.</p>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="glass mt-12 rounded-[2rem] p-6 md:p-8">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="glass mt-12 rounded-2xl p-6 md:p-8">
           {!paid && <p data-testid="song-status-unpaid" className="text-[var(--mute)]">Este pedido aguarda pagamento.</p>}
           {paid && song.has_audio && (
             <>
@@ -100,7 +100,7 @@ export default function Song() {
               : <p data-testid="song-lyrics-writing" className="flex items-center gap-3 text-[var(--mute)]"><Loader2 size={16} className="animate-spin" />A escrever a letra com base na vossa história…</p>}
           </div>
           <aside className="space-y-5 lg:col-span-5">
-            <div className="rounded-[1.5rem] border border-white/[0.07] p-6">
+            <div className="rounded-xl border border-white/[0.07] p-6">
               <p className="eyebrow mb-3 flex items-center gap-2"><PenLine size={14} />Pedir revisão</p>
               <textarea data-testid="song-revision-textarea" value={rev} onChange={(e) => setRev(e.target.value)} rows={4} maxLength={1500} placeholder="Ex.: mudar o verso 2 para mencionar a viagem a Sintra…"
                 className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm outline-none focus:border-[var(--gold)]" />

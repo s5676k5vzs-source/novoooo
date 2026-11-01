@@ -20,14 +20,13 @@ const Vinyl = ({ playing }) => {
   return (
     <div onMouseMove={onMove} onMouseLeave={() => { mx.set(0); my.set(0); }} className="relative aspect-square w-full [perspective:1200px]">
       <motion.div style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }} className="relative h-full w-full">
-        <div className="absolute inset-[8%] rounded-full bg-[radial-gradient(circle,rgba(230,161,92,.35),transparent_65%)] blur-3xl" />
         <div className={`vinyl-grooves absolute inset-0 rounded-full shadow-[0_40px_120px_-20px_rgba(0,0,0,.9),inset_0_0_0_1px_rgba(255,255,255,.06)] ${playing ? "spin-slow" : "spin-slow [animation-play-state:paused]"}`}>
           <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_200deg,transparent_0deg,rgba(255,255,255,.09)_40deg,transparent_80deg,transparent_200deg,rgba(255,255,255,.06)_240deg,transparent_280deg)]" />
-          <div className="absolute inset-[30%] overflow-hidden rounded-full ring-4 ring-[#0d0914]">
-            <img src={IMG.hero} alt="Casal a dançar ao pôr do sol" className="h-full w-full scale-125 object-cover" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_40%,rgba(13,9,20,.55))]" />
+          <div className="absolute inset-[30%] overflow-hidden rounded-full ring-4 ring-[#0a0a0b]">
+            <img src={IMG.hero} alt="Casal a dançar ao pôr do sol" fetchpriority="high" decoding="async" width="600" height="600" className="h-full w-full scale-125 object-cover" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_40%,rgba(10,10,11,.55))]" />
           </div>
-          <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0d0914] ring-2 ring-[var(--gold)]" />
+          <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0a0a0b] ring-2 ring-[var(--gold)]" />
         </div>
         <div style={{ transform: "translateZ(60px)" }} className="glass absolute -left-2 bottom-[8%] flex items-center gap-3 rounded-2xl px-4 py-3 sm:-left-8">
           <div className="flex h-8 items-end gap-[3px]">
@@ -36,8 +35,8 @@ const Vinyl = ({ playing }) => {
             ))}
           </div>
           <div>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--gold)]">A tocar agora</p>
-            <p className="font-display text-lg leading-tight">Volta a Tocar</p>
+            <p className="font-mono text-[11px] text-[var(--gold)]">● a tocar agora</p>
+            <p className="text-base font-medium leading-tight">Volta a Tocar</p>
           </div>
         </div>
         <div style={{ transform: "translateZ(90px)" }} className="glass absolute -right-1 top-[10%] rounded-2xl px-4 py-3 sm:-right-6">
@@ -63,15 +62,15 @@ export const Hero = () => {
   };
   return (
     <section ref={ref} data-testid="hero-section" className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[700px] w-[1100px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(217,119,127,.18),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_50%_0%,#000_30%,transparent_75%)]" />
       <audio ref={audio} src="/samples/s2.mp3" preload="none" onEnded={() => setPlaying(false)} />
       <div className="relative mx-auto grid max-w-[1400px] items-center gap-14 px-5 md:px-10 lg:grid-cols-12">
         <motion.div style={{ y: yText }} className="lg:col-span-7">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }} className="eyebrow mb-7 flex items-center gap-3">
-            <span className="h-px w-10 bg-[var(--gold)]" />Músicas personalizadas · feitas para emocionar
+            músicas personalizadas · feitas para emocionar
           </motion.p>
-          <h1 data-testid="hero-title" className="font-display text-[3.4rem] leading-[0.92] sm:text-7xl lg:text-[7.2rem]">
-            <MaskLines lines={["Cada amor", <>merece a sua</>, <em key="e" className="text-gold-grad">reprise.</em>]} />
+          <h1 data-testid="hero-title" className="font-display text-[3rem] leading-[0.95] sm:text-7xl lg:text-[6.4rem]">
+            <MaskLines lines={["Cada amor", <>merece a sua</>, <span key="e" className="text-[var(--gold)]">reprise.</span>]} />
           </h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7, ease }} className="mt-8 max-w-xl text-base text-[var(--mute)] md:text-lg">
             Conte-nos a vossa história. Nós transformamo-la numa canção original — para declarar, celebrar ou fazer alguém voltar a sentir o que sentiu no primeiro dia.

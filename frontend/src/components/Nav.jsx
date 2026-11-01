@@ -16,7 +16,7 @@ export const Nav = () => {
   }, []);
   const go = (id) => { setOpen(false); scrollToId(id); };
   return (
-    <header data-testid="site-header" className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${scrolled ? "border-b border-[rgba(230,161,92,.1)] bg-[rgba(13,9,20,.78)] backdrop-blur-xl" : "bg-transparent"}`}>
+    <header data-testid="site-header" className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${scrolled ? "border-b border-[rgba(255,106,61,.1)] bg-[rgba(10,10,11,.85)] backdrop-blur-xl" : "bg-transparent"}`}>
       <div className="mx-auto flex h-[76px] max-w-[1400px] items-center justify-between px-5 md:px-10">
         <Logo />
         <nav className="hidden items-center gap-8 lg:flex">

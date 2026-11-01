@@ -11,9 +11,9 @@ export const Reviews = () => (
       <SectionHead eyebrow="Avaliações" title={<>Histórias que <em className="text-gold-grad">viraram canções</em></>} sub="O que dizem as pessoas que ofereceram uma Reprise." />
       <div className="mt-14 grid auto-rows-[minmax(0,auto)] gap-5 md:grid-cols-6">
         <motion.article data-testid="review-featured" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.9 }}
-          className="relative overflow-hidden rounded-[2rem] md:col-span-3 md:row-span-2">
-          <img src={IMG.elders} alt="Casal abraçado junto ao mar" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0914] via-[#0d0914]/70 to-[#0d0914]/10" />
+          className="relative overflow-hidden rounded-2xl md:col-span-3 md:row-span-2">
+          <img src={IMG.elders} alt="Casal abraçado junto ao mar" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b] via-[#0a0a0b]/70 to-[#0a0a0b]/10" />
           <div className="relative flex h-full min-h-[460px] flex-col justify-end p-8 md:p-10">
             <Stars />
             <h3 className="mt-5 font-display text-4xl leading-tight md:text-5xl">“{REVIEWS[2].title}”</h3>
@@ -23,7 +23,7 @@ export const Reviews = () => (
         </motion.article>
         {REVIEWS.filter((_, i) => i !== 2).map((r, i) => (
           <motion.article key={r.name} data-testid={`review-card-${i}`} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.8, delay: (i % 2) * 0.08 }}
-            className={`flex flex-col rounded-[2rem] border border-white/[0.07] bg-[var(--ink-2)] p-7 transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-[rgba(230,161,92,.3)] ${i === 4 ? "md:col-span-6 lg:col-span-6" : "md:col-span-3 lg:col-span-3"} ${i < 2 ? "" : ""}`}>
+            className={`flex flex-col rounded-2xl border border-white/[0.07] bg-[var(--ink-2)] p-7 transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-[rgba(255,106,61,.3)] ${i === 4 ? "md:col-span-6 lg:col-span-6" : "md:col-span-3 lg:col-span-3"} ${i < 2 ? "" : ""}`}>
             <Stars />
             <h4 className="mt-4 font-display text-2xl">{r.title}</h4>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--mute)]">“{r.text}”</p>

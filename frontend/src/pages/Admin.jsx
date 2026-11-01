@@ -21,7 +21,7 @@ const Login = ({ onOk }) => {
   };
   return (
     <main className="grid min-h-screen place-items-center px-5">
-      <form onSubmit={submit} data-testid="admin-login-form" className="glass w-full max-w-sm rounded-[2rem] p-8">
+      <form onSubmit={submit} data-testid="admin-login-form" className="glass w-full max-w-sm rounded-2xl p-8">
         <Logo />
         <h1 className="mt-8 font-display text-4xl">Painel do estúdio</h1>
         <input data-testid="admin-login-email-input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="E-mail" className="mt-6 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 outline-none focus:border-[var(--gold)]" />
@@ -114,7 +114,7 @@ export default function Admin() {
           {FILTERS.map((f) => <button key={f} data-testid={`admin-filter-${f}`} onClick={() => setFilter(f)} className={`rounded-full px-4 py-2 text-xs ${filter === f ? "bg-[var(--ivory)] text-[var(--ink)]" : "border border-white/10 text-[var(--mute)]"}`}>{f === "all" ? "Todos" : STATUS[f]} ({f === "all" ? orders.length : orders.filter((o) => o.status === f).length})</button>)}
         </div>
       </div>
-      <div className="mt-8 overflow-x-auto rounded-[1.5rem] border border-white/[0.07]">
+      <div className="mt-8 overflow-x-auto rounded-xl border border-white/[0.07]">
         <table data-testid="admin-orders-table" className="w-full min-w-[760px] text-sm">
           <thead className="bg-white/[0.03] text-left text-xs uppercase tracking-wider text-[var(--mute)]">
             <tr>{["Data", "Para", "Ocasião", "Cliente", "Entrega", "Estado", ""].map((h) => <th key={h} className="px-5 py-4 font-medium">{h}</th>)}</tr>
@@ -128,7 +128,7 @@ export default function Admin() {
                 <td className="px-5 py-4">{o.occasion}</td>
                 <td className="px-5 py-4 text-[var(--mute)]">{o.email}</td>
                 <td className="px-5 py-4">{o.delivery === "express" ? "Express" : "24h"}</td>
-                <td className="px-5 py-4"><span className={`rounded-full px-2.5 py-1 text-xs ${o.status === "completed" ? "bg-emerald-500/15 text-emerald-300" : o.status === "awaiting_payment" ? "bg-white/5 text-[var(--mute)]" : "bg-[rgba(230,161,92,.15)] text-[var(--gold)]"}`}>{STATUS[o.status]}</span></td>
+                <td className="px-5 py-4"><span className={`rounded-full px-2.5 py-1 text-xs ${o.status === "completed" ? "bg-emerald-500/15 text-emerald-300" : o.status === "awaiting_payment" ? "bg-white/5 text-[var(--mute)]" : "bg-[rgba(255,106,61,.15)] text-[var(--gold)]"}`}>{STATUS[o.status]}</span></td>
                 <td className="px-5 py-4 text-right"><button data-testid={`admin-order-open-${o.id}`} onClick={() => setOpenId(o.id)} className="text-[var(--gold)] hover:underline">Abrir</button></td>
               </tr>
             ))}

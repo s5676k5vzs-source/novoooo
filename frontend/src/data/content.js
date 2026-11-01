@@ -1,4 +1,4 @@
-const U = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=80`;
+const U = (id, w = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=70`;
 
 export const IMG = {
   hero: U("photo-1531747056595-07f6cbbe10ad"),

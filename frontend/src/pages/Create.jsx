@@ -14,7 +14,7 @@ const ease = [0.22, 1, 0.36, 1];
 
 const Chip = ({ active, onClick, children, testid, hint }) => (
   <button type="button" data-testid={testid} onClick={onClick}
-    className={`group relative rounded-2xl border px-4 py-4 text-left transition-[border-color,background-color,transform] duration-300 hover:-translate-y-0.5 ${active ? "border-[var(--gold)] bg-[rgba(230,161,92,.12)]" : "border-white/10 bg-white/[0.02] hover:border-white/25"}`}>
+    className={`group relative rounded-2xl border px-4 py-4 text-left transition-[border-color,background-color,transform] duration-300 hover:-translate-y-0.5 ${active ? "border-[var(--gold)] bg-[rgba(255,106,61,.12)]" : "border-white/10 bg-white/[0.02] hover:border-white/25"}`}>
     <span className="flex items-center justify-between gap-2">
       <span className="font-medium">{children}</span>
       <span className={`grid h-5 w-5 shrink-0 place-items-center rounded-full transition-colors ${active ? "bg-[var(--gold)] text-[var(--ink)]" : "border border-white/20"}`}>{active && <Check size={12} />}</span>
@@ -111,7 +111,7 @@ export default function Create() {
       </div>) },
     8: { q: "Reveja e finalize", sub: `A música para ${name} está quase a nascer.`, body: (
       <div className="grid gap-6 lg:grid-cols-5">
-        <div data-testid="wizard-summary" className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6 lg:col-span-2">
+        <div data-testid="wizard-summary" className="rounded-xl border border-white/10 bg-white/[0.02] p-6 lg:col-span-2">
           {[["Para", `${form.recipient_name} (${form.recipient})`], ["Ocasião", form.occasion], ["Estilo", form.genre], ["Voz", `${form.voice} · ${form.mood}`], ["E-mail", form.email]].map(([k, v]) => (
             <div key={k} className="flex justify-between gap-4 border-b border-white/[0.06] py-3 text-sm last:border-0"><span className="text-[var(--mute)]">{k}</span><span className="truncate text-right">{v}</span></div>
           ))}
@@ -121,7 +121,7 @@ export default function Create() {
         <div className="space-y-3 lg:col-span-3">
           {[["standard", "Entrega Standard", "Pronta em 24 horas", Clock], ["express", "Entrega Express", "Pronta em cerca de 1 hora", Zap]].map(([k, t, d, Icon]) => (
             <button key={k} data-testid={`wizard-delivery-${k}`} onClick={() => set("delivery", k)}
-              className={`flex w-full items-center gap-4 rounded-[1.5rem] border p-5 text-left transition-colors ${form.delivery === k ? "border-[var(--gold)] bg-[rgba(230,161,92,.1)]" : "border-white/10 hover:border-white/25"}`}>
+              className={`flex w-full items-center gap-4 rounded-xl border p-5 text-left transition-colors ${form.delivery === k ? "border-[var(--gold)] bg-[rgba(255,106,61,.1)]" : "border-white/10 hover:border-white/25"}`}>
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/5 text-[var(--gold)]"><Icon size={18} /></span>
               <span className="flex-1"><span className="block font-medium">{t}</span><span className="text-sm text-[var(--mute)]">{d}</span></span>
               <span className="font-display text-3xl">€{PRICES[k]}</span>
@@ -144,7 +144,7 @@ export default function Create() {
 
   return (
     <main data-testid="create-page" className="relative min-h-screen pb-32">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(217,119,127,.14),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(255,106,61,.08),transparent_60%)]" />
       <header className="relative mx-auto flex max-w-[1100px] items-center justify-between px-5 py-6 md:px-10">
         <Logo />
         <Link to="/" data-testid="wizard-exit-link" className="text-sm text-[var(--mute)] hover:text-[var(--ivory)]">Sair</Link>
@@ -163,7 +163,7 @@ export default function Create() {
         </motion.div>
       </div>
       {step < TOTAL && (
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/5 bg-[rgba(13,9,20,.85)] backdrop-blur-xl">
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/5 bg-[rgba(10,10,11,.9)] backdrop-blur-xl">
           <div className="mx-auto flex max-w-[1100px] items-center justify-between px-5 py-4 md:px-10">
             <button data-testid="wizard-back-button" onClick={back} disabled={step === 1} className="btn-ghost !py-3 disabled:opacity-30"><ArrowLeft size={16} />Voltar</button>
             <button data-testid="wizard-next-step-button" onClick={next} disabled={!valid[step]} className="btn-gold !py-3 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:transform-none">Seguinte<ArrowRight size={16} /></button>

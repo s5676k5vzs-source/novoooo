@@ -27,7 +27,7 @@ export const AudioPlayer = ({ src, testid = "audio-player", compact = false }) =
   const pct = d ? t / d : 0;
   return (
     <div data-testid={testid} className="flex items-center gap-4">
-      <audio ref={ref} src={src} preload="metadata" onTimeUpdate={(e) => setT(e.currentTarget.currentTime)} onLoadedMetadata={(e) => setD(e.currentTarget.duration)} onEnded={() => setPlaying(false)} />
+      <audio ref={ref} src={src} preload="none" onTimeUpdate={(e) => setT(e.currentTarget.currentTime)} onLoadedMetadata={(e) => setD(e.currentTarget.duration)} onEnded={() => setPlaying(false)} />
       <button data-testid={`${testid}-play-pause-button`} onClick={toggle} aria-label={playing ? "Pausar" : "Tocar"}
         className={`grid shrink-0 place-items-center rounded-full bg-[var(--ivory)] text-[var(--ink)] transition-transform duration-300 hover:scale-105 ${compact ? "h-11 w-11" : "h-14 w-14"}`}>
         {playing ? <Pause size={compact ? 16 : 20} /> : <Play size={compact ? 16 : 20} className="ml-0.5" />}
@@ -35,7 +35,7 @@ export const AudioPlayer = ({ src, testid = "audio-player", compact = false }) =
       <div className="min-w-0 flex-1">
         <div onClick={seek} data-testid={`${testid}-seekbar`} className="flex h-10 cursor-pointer items-center gap-[2px]">
           {BARS.map((h, i) => (
-            <span key={i} className="flex-1 rounded-full transition-colors duration-200" style={{ height: `${h * 100}%`, background: i / BARS.length < pct ? "var(--gold)" : "rgba(250,247,242,.18)" }} />
+            <span key={i} className="flex-1 rounded-full transition-colors duration-200" style={{ height: `${h * 100}%`, background: i / BARS.length < pct ? "var(--gold)" : "rgba(255,255,255,.16)" }} />
           ))}
         </div>
         <div className="mt-1 flex justify-between font-mono text-[11px] text-[var(--mute)]"><span>{fmt(t)}</span><span>{fmt(d)}</span></div>
